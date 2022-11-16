@@ -33,14 +33,9 @@ enum FrequencyBandsPoints {
   max = 60,
 }
 
-const FrequencyBandsPoints = {
-  minTheta = 4,
-  minAlphaLow = 8,
-  minAlphaHigh = 10,
-  minBetaLow = 12.5,
-  minBetaMid = 16.5,
-  minBetaHigh = 21,
-  minGamma = 30,
-};
+enum performanceConfig {
+  defaultHistoryDurationInSeconds = 10,
+  defaultSamplingRateInHz = 256,
+}
 
-export { BrainMap, FrequencyBandsPoints };
+export { BrainMap, FrequencyBandsPoints, performanceConfig };
