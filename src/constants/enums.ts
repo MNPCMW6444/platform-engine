@@ -20,6 +20,7 @@ enum BrainMap {
   T6,
   Q1,
   Q2,
+  AUX,
 }
 
 enum FrequencyBandsPoints {

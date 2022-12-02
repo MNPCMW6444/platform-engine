@@ -1,12 +1,17 @@
-import { MuseClient } from "muse-js";
+import { channelNames, MuseClient } from "muse-js";
 import UI from "./ui/UI";
 
 import { epoch, fft, alphaPower } from "@neurosity/pipes";
 import { format } from "path";
 import { from } from "rxjs";
+import { read } from "fs";
+import { addChannelSample } from "./store/reducers/museReducer";
+import { useDispatch } from "react-redux";
 
 function App() {
-  let length = [];
+  /*  let length = [];
+
+  //console.log(channelNames);
 
   for (let i = 0; i < 5000; i++) {
     length.push(i);
@@ -20,6 +25,8 @@ function App() {
       channelNames: ["first", "second", "third", "forth"],
     },
   }));
+ */
+  const dispatch = useDispatch();
 
   return (
     <div className="App">
@@ -34,22 +41,31 @@ function App() {
             let client = new MuseClient();
             await client.connect();
             await client.start();
+            // let c = 0;
             client.eegReadings.subscribe((reading) => {
+              dispatch(addChannelSample(reading));
               /*   (3 * Betalowfp1fp2 +
                 2 * Betamidfp1fp2 +
                 betahighfp1fp2 -
                 (2 * thetafp1fp2 + 2 * alphalowa1a2 + alphalowa1a2)) /
                 6
  */
-
-              console.log(reading);
+              /* 
+              if (
+                reading.electrode === 1 &&
+                Math.abs(reading.samples[5]) < 700
+              ) {
+                234234;
+                c = 0;
+              } else c++;
             });
 
             from(array)
               .pipe(epoch({ duration: 256, interval: 100 }), fft({ bins: 8 }))
               .subscribe((x) => {
-                /* console.log(x) */
-              });
+                /* console.log(x) 
+              }); */
+            });
           }}
         >
           start

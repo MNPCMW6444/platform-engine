@@ -20,6 +20,7 @@ interface RawEEG {
   T6?: number;
   Q1?: number;
   Q2?: number;
+  Aux?: number;
 }
 
 interface AttentionScore {
@@ -59,6 +60,15 @@ type NFFT = (number) => AplitudesPerFrequencyBands;
 
 type Last10SecOfRawEEG = RawEEG[];
 
+interface PipableEEG {
+  data: number[]; // channels
+  timestamp: number;
+  info?: {
+    samplingRate?: Number;
+    channelNames?: string[];
+  };
+}
+
 export type {
   RawEEG,
   AttentionScore,
@@ -68,4 +78,5 @@ export type {
   AplitudesPerFrequencyBands,
   NFFT,
   Last10SecOfRawEEG,
+  PipableEEG,
 };
