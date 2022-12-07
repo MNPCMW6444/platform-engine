@@ -8,7 +8,11 @@ import { read } from "fs";
 import { addChannelSample } from "./store/reducers/museReducer";
 import { useDispatch } from "react-redux";
 
-function App() {
+interface AppProps {
+  x: any;
+}
+
+const App = ({ x }: AppProps) => {
   /*  let length = [];
 
   //console.log(channelNames);
@@ -74,6 +78,6 @@ function App() {
     </div>
   );
   return <UI />;
-}
+};
 
 export default App;

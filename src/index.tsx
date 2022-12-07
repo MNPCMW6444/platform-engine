@@ -9,6 +9,8 @@ import { epoch, fft, powerByBand } from "@neurosity/pipes";
 import { FrequencyBands } from "./constants";
 import { FrequencyRangeInHz } from "./types";
 
+let x;
+
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
@@ -55,14 +57,14 @@ getState$(store)
     fft({ bins: 256 }),
     powerByBand(frequencyBands)
   )
-  .subscribe((x) => {
-    console.log(x);
+  .subscribe((y) => {
+    x = y;
   });
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <App x={x} />
     </Provider>
   </React.StrictMode>
 );
