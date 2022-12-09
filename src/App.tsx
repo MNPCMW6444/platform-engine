@@ -7,6 +7,7 @@ import { from } from "rxjs";
 import { read } from "fs";
 import { addChannelSample } from "./store/reducers/museReducer";
 import { useDispatch } from "react-redux";
+import Testing from "./ui/Testing";
 
 interface AppProps {
   x: any;
@@ -75,6 +76,7 @@ const App = ({ x }: AppProps) => {
           start
         </button>
       </header>
+      <Testing x={x} />
     </div>
   );
   return <UI />;
