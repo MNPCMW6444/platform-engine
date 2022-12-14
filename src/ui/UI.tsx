@@ -102,11 +102,7 @@ export default function UI() {
       {/*  <br />
       <div>
         {" "}
-        {(3 * Betalowfp1fp2 +
-          2 * Betamidfp1fp2 +
-          betahighfp1fp2 -
-          (2 * thetafp1fp2 + 2 * alphalowa1a2 + alphalowa1a2)) /
-          6}
+          
       </div> */}
     </div>
   );
