@@ -1,8 +1,7 @@
-import { TextField, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { orange } from "@mui/material/colors";
 import Grid from "@mui/material/Grid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //import mexp from "math-expression-evaluator";
 import { evaluate } from "mathjs";
@@ -12,6 +11,15 @@ import { store } from "../store/store";
 import { epoch, fft, powerByBand } from "@neurosity/pipes";
 import { FrequencyBands } from "../constants";
 import { FrequencyRangeInHz } from "../types";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 interface TestingProps {
   x: any;
@@ -61,6 +69,14 @@ const Testing = ({ x }: TestingProps) => {
 
   const [s, sets] = useState<any>();
 
+  useEffect(() => {
+    r !== "" && localStorage.setItem("r", r);
+  }, [r]);
+
+  useEffect(() => {
+    setr(localStorage.getItem("r") + "");
+  }, []);
+
   getState$(store)
     .pipe(
       epoch({ duration: 256, interval: 100 }),
@@ -72,213 +88,237 @@ const Testing = ({ x }: TestingProps) => {
     });
 
   return (
-    <Grid
-      container
-      direction="column"
-      height={"40vh"}
-      width="700px"
-      justifyContent="space-around"
-      sx={{ backgroundColor: orange[50] }}
-    >
-      <Grid item container>
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>Theta</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " ThetaA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " ThetaA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " ThetaF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " ThetaF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>AlphaLow</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaLowA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaLowA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaLowF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaLowF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>AlphaHigh</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaHighA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaHighA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaHighF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " AlphaHighF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>BetaLow</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaLowA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaLowA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaLowF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaLowF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>BetaMid</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaMidA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaMidA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaMidF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaMidF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>BetaHigh</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaHighA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaHighA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaHighF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " BetaHighF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <Typography sx={{ fontSize: "0.8rem" }}>Gamma</Typography>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " GammaA1 ")}>
-              A1
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " GammaA2 ")}>
-              A2
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " GammaF7 ")}>
-              F7
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button onClick={() => setr((prev) => prev + " GammaF8 ")}>
-              F8
-            </Button>
-          </Grid>
-        </Grid>
-      </Grid>
-      {/* <Grid item>
-        <TextField
-          InputProps={{
-            readOnly: true,
-          }}
-          value={it}
-        />
-      </Grid>
-      <Grid item>
-        <Button onClick={() => setr((prev) => prev + it)}>אשר</Button>
-      </Grid> */}
-      <Grid item width="700px">
-        <TextField
-          fullWidth={true}
-          value={r}
-          onChange={(e) => setr(e.target.value)}
-        />
-      </Grid>
-      <Grid item>Muse {!s && "dis"}Connected</Grid>
-      <Grid item>{parseNFTModel(r, s)}</Grid>
-    </Grid>
+    <>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                Theta
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                AlphaLow
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                AlphaHigh
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                BetaLow
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                BetaMid
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                BetaHigh
+              </Typography>
+            </TableCell>
+            <TableCell>
+              <Typography color="white" sx={{ fontSize: "1rem" }}>
+                Gamma
+              </Typography>
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          <TableRow>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " ThetaA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " ThetaA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " ThetaF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " ThetaF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaLowA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaLowA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaLowF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaLowF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaHighA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaHighA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaHighF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " AlphaHighF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaLowA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaLowA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaLowF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaLowF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaMidA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaMidA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaMidF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaMidF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaHighA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaHighA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaHighF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " BetaHighF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " GammaA1 ")}>
+                A1
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " GammaA2 ")}>
+                A2
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " GammaF7 ")}>
+                F7
+              </Button>
+            </TableCell>
+            <TableCell>
+              {" "}
+              <Button onClick={() => setr((prev) => prev + " GammaF8 ")}>
+                F8
+              </Button>
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+      <TextField
+        fullWidth={true}
+        value={r}
+        inputProps={{
+          style: { color: "white" },
+        }}
+        onChange={(e) => setr(e.target.value)}
+      />
+      Muse {!s && "dis"}Connected
+      {parseNFTModel(r, s)}
+    </>
   );
 };
 

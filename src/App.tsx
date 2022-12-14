@@ -8,6 +8,9 @@ import { read } from "fs";
 import { addChannelSample } from "./store/reducers/museReducer";
 import { useDispatch } from "react-redux";
 import Testing from "./ui/Testing";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 
 interface AppProps {
   x: any;
@@ -33,53 +36,46 @@ const App = ({ x }: AppProps) => {
  */
   const dispatch = useDispatch();
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <button style={{ fontSize: "10rem" }} onClick={() => {}}>
-          stop
-        </button>
-        <br />
-        <button
-          style={{ fontSize: "10rem" }}
+  const MUSE = (
+    <Grid container columnSpacing={3}>
+      <Grid item>
+        <Button
+          variant="outlined"
+          style={{ backgroundColor: "white", fontSize: "2.6rem" }}
           onClick={async () => {
             let client = new MuseClient();
             await client.connect();
             await client.start();
-            // let c = 0;
             client.eegReadings.subscribe((reading) => {
               dispatch(addChannelSample(reading));
-              /*   (3 * Betalowfp1fp2 +
-                2 * Betamidfp1fp2 +
-                betahighfp1fp2 -
-                (2 * thetafp1fp2 + 2 * alphalowa1a2 + alphalowa1a2)) /
-                6
- */
-              /* 
-              if (
-                reading.electrode === 1 &&
-                Math.abs(reading.samples[5]) < 700
-              ) {
-                234234;
-                c = 0;
-              } else c++;
-            });
-
-            from(array)
-              .pipe(epoch({ duration: 256, interval: 100 }), fft({ bins: 8 }))
-              .subscribe((x) => {
-                /* console.log(x) 
-              }); */
             });
           }}
         >
-          start
-        </button>
-      </header>
-      <Testing x={x} />
-    </div>
+          connect
+        </Button>
+      </Grid>
+
+      <Grid item>
+        <Button
+          variant="outlined"
+          style={{ backgroundColor: "white", fontSize: "2.6rem" }}
+          color="error"
+          onClick={() => {}}
+        >
+          disconnect
+        </Button>
+      </Grid>
+    </Grid>
   );
-  return <UI />;
+
+  return (
+    <Grid container direction="column" rowSpacing={6} alignItems="center">
+      <Grid item>{MUSE}</Grid>
+      <Grid item>
+        <Testing x={x} />
+      </Grid>
+    </Grid>
+  );
 };
 
 export default App;
