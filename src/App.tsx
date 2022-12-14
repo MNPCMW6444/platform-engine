@@ -69,7 +69,14 @@ const App = ({ x }: AppProps) => {
   );
 
   return (
-    <Grid container direction="column" rowSpacing={6} alignItems="center">
+    <Grid
+      container
+      height="100vh"
+      direction="column"
+      rowSpacing={6}
+      justifyContent="space-around"
+      alignItems="center"
+    >
       <Grid item>{MUSE}</Grid>
       <Grid item>
         <Testing x={x} />

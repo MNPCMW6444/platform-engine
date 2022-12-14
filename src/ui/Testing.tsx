@@ -133,43 +133,64 @@ const Testing = ({ x }: TestingProps) => {
           <TableRow>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " ThetaA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " ThetaA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " ThetaA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " ThetaA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " ThetaF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " ThetaF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " ThetaF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " ThetaF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaLowA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaLowA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaLowA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaLowA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaLowF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaLowF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
@@ -177,43 +198,64 @@ const Testing = ({ x }: TestingProps) => {
           <TableRow>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaLowF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaLowF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaHighA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaHighA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaHighA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaHighA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaHighF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaHighF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " AlphaHighF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " AlphaHighF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaLowA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaLowA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaLowA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaLowA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
@@ -221,43 +263,64 @@ const Testing = ({ x }: TestingProps) => {
           <TableRow>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaLowF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaLowF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaLowF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaLowF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaMidA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaMidA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaMidA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaMidA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaMidF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaMidF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaMidF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaMidF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaHighA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaHighA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
@@ -265,43 +328,64 @@ const Testing = ({ x }: TestingProps) => {
           <TableRow>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaHighA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaHighA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaHighF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaHighF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " BetaHighF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " BetaHighF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " GammaA1 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " GammaA1 ")}
+              >
                 A1
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " GammaA2 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " GammaA2 ")}
+              >
                 A2
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " GammaF7 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " GammaF7 ")}
+              >
                 F7
               </Button>
             </TableCell>
             <TableCell>
               {" "}
-              <Button onClick={() => setr((prev) => prev + " GammaF8 ")}>
+              <Button
+                sx={{ color: "#99AAFF", fontSize: "1.4rem" }}
+                onClick={() => setr((prev) => prev + " GammaF8 ")}
+              >
                 F8
               </Button>
             </TableCell>
